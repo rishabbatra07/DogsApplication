@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layouts :: header">
+</head>
+
+<body>
+	<nav th:replace="layouts ::navbar"></nav>
+	<div class="container">
+		<form action="/dogs/save" th:object="${dog}" method="POST">
+		<input type="text" placeholder="Dog Name" th:field="${dog.dogName}">
+		<input type="text" placeholder="Dog Color" th:field="${dog.dogColor}">
+		<input type="text" placeholder="Vaccination Status" th:field="${dog.dogVacStatus}">
+		<button type="submit">Create Dog</button>
+		</form>
+	</div>
+	
+</body>
+
+</html>
