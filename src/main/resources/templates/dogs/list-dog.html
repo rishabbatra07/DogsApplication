@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+	<head th:replace="layouts :: header"></head>
+	
+	<body>
+	
+	<nav th:replace="layouts :: navbar"></nav>
+	
+		<div class="container">
+			<h3>Dogs Directory</h3>
+			<hr>
+			
+			<!--  Add New Employee Button -->
+			<a th:href="@{/dogs/new}"
+				class="btn btn-primary btn-sm mb-3"> 
+				Add Dog 
+			</a> 
+			<br></br>
+			
+			<table class="table table-bordered table-striped">
+				<thead class="thead-dark">
+					<tr>
+						<th>Dog Name</th>
+						<th>Dog Color</th>
+					</tr>
+				</thead>		
+				<tbody>
+					<tr th:each="aDogs : ${dogs}">
+						<td th:text="${aDogs.dogName}"/>
+						<td th:text="${aDogs.dogColor}"/>
+				
+					</tr>
+				</tbody>
+			
+			</table>
+		</div>
+	</body>
+	
+</html>
